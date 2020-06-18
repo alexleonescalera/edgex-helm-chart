@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-edgex-device-virtual
@@ -40,7 +40,7 @@ spec:
         - name: device-virtual-volume
           mountPath: /edgex/edgex-device-virtual/application.properties
           subPath: application.properties
-      volumes: 
+      volumes:
       - name: device-virtual-volume
         configMap:
           name: {{ .Release.Name }}-edgex-device-virtual
